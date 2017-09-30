@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 app.get('/users', (req, res) => {
 	res.status(200).send([{
 		name: 'Dhruv',
-		age: 21
+		age: 19
 	}, {
 		name: 'Ojas',
 		age: 19

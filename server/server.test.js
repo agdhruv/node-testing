@@ -20,6 +20,10 @@ it('should return my user object', (done) => {
 		.get('/users')
 		.expect(200)
 		.expect((res) => {
-			expect(res.body).toInclude();
-		});
+			expect(res.body).toInclude({
+				name: 'Dhruv',
+				age: 19
+			});
+		})
+		.end(done);
 });
