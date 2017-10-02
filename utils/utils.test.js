@@ -1,33 +1,38 @@
 const utils = require('./utils');
 const expect = require('expect');
 
-it('should add two numbers', () => {
-	var res = utils.add(33, 11);
+describe('Utils', () => {
 
-	// if (res !== 44){
-	// 	throw new Error(`Expected 44, but got ${res}`);
-	// } // now we learn to use an assertion library
+	describe('#add', () => { // nesting of describe blocks is allowed
+		it('should add two numbers', () => {
+			var res = utils.add(33, 11);
 
-	expect(res).toBe(44).toBeA('number');
-});
+			// if (res !== 44){
+			// 	throw new Error(`Expected 44, but got ${res}`);
+			// } // now we learn to use an assertion library
 
-it('should async add two numbers', (done) => {
-	utils.asyncAdd(4, 3, (sum) => {
-		expect(sum).toBe(7).toBeA('number');
-		done();
+			expect(res).toBe(44).toBeA('number');
+		});
+
+		it('should async add two numbers', (done) => {
+			utils.asyncAdd(4, 3, (sum) => {
+				expect(sum).toBe(7).toBeA('number');
+				done();
+			});
+		});
 	});
-});
 
-it('should square a number', () => {
-	var res = utils.square(5);
+	it('should square a number', () => {
+		var res = utils.square(5);
 
-	expect(res).toBe(25).toBeA('number');
-});
+		expect(res).toBe(25).toBeA('number');
+	});
 
-it('should async square a number', (done) => {
-	utils.asyncSquare(9, (square) => {
-		expect(square).toBe(81).toBeA('number');
-		done();
+	it('should async square a number', (done) => {
+		utils.asyncSquare(9, (square) => {
+			expect(square).toBe(81).toBeA('number');
+			done();
+		});
 	});
 });
 
